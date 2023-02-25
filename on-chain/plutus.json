@@ -1,0 +1,200 @@
+{
+  "preamble": {
+    "title": "waalge/on-chain",
+    "description": "Aiken contracts for project 'waalge/on-chain'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "basic.basic_int",
+      "redeemer": {
+        "dataType": "integer"
+      },
+      "compiledCode": "584401000032323232323232232253330063370e00490000a4c2c6eb4004c0040048894ccc0180085261330053001300700233300300330080020015734ae6d55cfaba157441",
+      "hash": "6a67e5e4b18e3ced0195d6428f93d55a0cea5c26177eab70d8ed31f1"
+    },
+    {
+      "title": "basic.basic_byte_array",
+      "redeemer": {
+        "dataType": "bytes"
+      },
+      "compiledCode": "584a01000032323232323232232253330063371e0049110568656c6c6f00149858dd7000980080091129998030010a4c26600a6002600e0046660060066010004002ae695cdaab9f5742ae89",
+      "hash": "b2c8f38af48757d680c0c3925946c0b858a17c67d69e494a1e85b288"
+    },
+    {
+      "title": "basic.basic_enum",
+      "redeemer": {
+        "title": "BasicEnum",
+        "description": "Must be good",
+        "anyOf": [
+          {
+            "title": "Good",
+            "dataType": "constructor",
+            "index": 0,
+            "fields": []
+          },
+          {
+            "title": "Bad",
+            "dataType": "constructor",
+            "index": 1,
+            "fields": []
+          }
+        ]
+      },
+      "compiledCode": "585101000032323232323232322253330053253330063370e00290000a5114a0600e6ea8008526163001001222533300700214984cc014c004c020008ccc00c00cc0240080055cd2b9b5573aaae7d5d0aba201",
+      "hash": "46da48dadbdbe014b744d525c9529938aa7893d30ab184ad098ffd3d"
+    },
+    {
+      "title": "basic.basic_list",
+      "redeemer": {
+        "dataType": "list",
+        "items": {
+          "dataType": "integer"
+        }
+      },
+      "compiledCode": "587e0100003232323232323223225333006533300800214a0264a66601200229404c8c8c8c94ccc02c0045288a50533300a3370e0049000099b87001480085281bad300c003375a6016008601600260140042930b1bac0013001001222533300600214984cc014c004c01c008ccc00c00cc0200080055cd2b9b5573eae855d11",
+      "hash": "7adb2b4c31416f4875ea3cc540f5a285889304fd145cc74ae5fd5b1e"
+    },
+    {
+      "title": "basic.basic_tuple",
+      "redeemer": {
+        "dataType": "list",
+        "items": [
+          {
+            "dataType": "integer"
+          },
+          {
+            "dataType": "bytes"
+          }
+        ]
+      },
+      "compiledCode": "587901000032323232323232323223225333006323253330083370e0049000099b8f0014890568656c6c6f0014a06eb8c02800cdd698040010a4c2c646466ec0c02c008c02c004c02c004dd6000980080091129998040010a4c26600a600260120046660060066014004002ae695cdaab9d5573caae7d5d0aba201",
+      "hash": "a6c2e50aa063e3c92455b712545a5da199f332e578e70f0fa04ee828"
+    },
+    {
+      "title": "basic.basic_option",
+      "redeemer": {
+        "title": "Optional",
+        "anyOf": [
+          {
+            "title": "Some",
+            "description": "An optional value.",
+            "dataType": "constructor",
+            "index": 0,
+            "fields": [
+              {
+                "dataType": "integer"
+              }
+            ]
+          },
+          {
+            "title": "None",
+            "description": "Nothing.",
+            "dataType": "constructor",
+            "index": 1,
+            "fields": []
+          }
+        ]
+      },
+      "compiledCode": "58c0010000323232323232323232322253330053232323370e00290001bad300d00132300b3754002a66600c66e1d20003009375400620062a660109212a4173736572746564206f6e20696e636f727265637420636f6e7374727563746f722076617269616e742e001622323330010014800000c888cccc028cdc3802001008119980200219b8000348008c048004004526163001001222533300900214984cc014c004c028008ccc00c00cc02c0080055cd2b9b5738aae7555cf2ab9f5742ae881",
+      "hash": "3e5d05cd136ad207c8ecbfa3359829b93d6120cff989533e42fd9790"
+    },
+    {
+      "title": "basic.basic_object",
+      "redeemer": {
+        "title": "BasicObject",
+        "anyOf": [
+          {
+            "title": "BasicObject",
+            "dataType": "constructor",
+            "index": 0,
+            "fields": [
+              {
+                "title": "int",
+                "description": "Must be zero",
+                "dataType": "integer"
+              },
+              {
+                "title": "bytes",
+                "description": "Must be \"hello\"",
+                "dataType": "bytes"
+              }
+            ]
+          }
+        ]
+      },
+      "compiledCode": "58950100003232323232323232225333005323253330073370e6eb4cc004c0080112000480004cdc79bae3300130020044800922010568656c6c6f0014a044646660020029000001911199980599b8700400200f23330040043370000690011808800800918041baa001149858c0040048894ccc01c0085261330053001300800233300300330090020015734ae6d55cf2ab9f5742ae89",
+      "hash": "0b7f5b907f12334e127711eb68bfc955dfadb6d23b6a97b57a416522"
+    },
+    {
+      "title": "basic.basic_sum",
+      "redeemer": {
+        "title": "BasicSum",
+        "anyOf": [
+          {
+            "title": "Sum0",
+            "dataType": "constructor",
+            "index": 0,
+            "fields": [
+              {
+                "title": "BasicObject",
+                "anyOf": [
+                  {
+                    "title": "BasicObject",
+                    "dataType": "constructor",
+                    "index": 0,
+                    "fields": [
+                      {
+                        "title": "int",
+                        "description": "Must be zero",
+                        "dataType": "integer"
+                      },
+                      {
+                        "title": "bytes",
+                        "description": "Must be \"hello\"",
+                        "dataType": "bytes"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "title": "Sum1",
+            "dataType": "constructor",
+            "index": 1,
+            "fields": [
+              {
+                "dataType": "list",
+                "items": {
+                  "dataType": "integer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "compiledCode": "58fe01000032323232323232323222533300532323253330083370e002900009919299980519b87375a66008600a002900024000266e3cdd7198021802800a400491010568656c6c6f0014a0601c002600600a26464a66601c00229404c94ccc03c00452809919191929998078008a5114a0a66601c66e1c009200013370e00290010a50375a60240066eb4c04400cc044004c040004dd61807000980180298049baa00422323330010014800000c888cccc02ccdc3802001008119980200219b8000348008c0480040048c024dd50008a4c2c6002002444a666010004293099802980098048011998018019805001000ab9a5736aae7555cf2ab9f5742ae881",
+      "hash": "4e380cd12073d5d98a0b9d71ae33de66ff4c2f880fbb2d047524b1bd"
+    },
+    {
+      "title": "basic.basic_dict",
+      "redeemer": {
+        "title": "Dict",
+        "description": "An opaque `Dict`. The type is opaque because the module maintains some\n invariant, namely: there's only one occurence of a given key in the dictionnary.\n\n Note that the `key` parameter is a phantom-type, and only present as a\n means of documentation. Keys are always `ByteArray`, but can be given\n meaningful names.\n\n See for example:\n\n ```aiken\n pub type Value =\n   Dict<PolicyId, Dict<AssetName, Int>>\n ```",
+        "dataType": "map",
+        "keys": {
+          "dataType": "bytes"
+        },
+        "values": {
+          "dataType": "integer"
+        }
+      },
+      "compiledCode": "59011d01000032323232323232323232322253330053232323370e00290001bad300e00132300b375400264a66600e66e1d2000300a375400220022a660129212a4173736572746564206f6e20696e636f727265637420636f6e7374727563746f722076617269616e742e001632323322330030020010054881047a65726f003001001222533300e00213374a900125eb804c8c8c8c94ccc034cdc7802800899ba548000cc04cdd400125eb804ccc01c01c00c014dd718078019bad300f0023012003301000222323330010014800000c888cccc028cdc3802001008919980200219b8000348008c04c004004526163001001222533300900214984cc014c004c02c008ccc00c00cc0300080055cd2b9b5738aae7555cf2ab9f5740ae855d11",
+      "hash": "18794936777c3dca6645e5e7d41d856afc705ec6ce38203972dbeb44"
+    }
+  ]
+}

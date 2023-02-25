@@ -1,0 +1,17 @@
+[[language]]
+name = "typescript"
+shebangs = ["deno", "node"]
+roots = ["deno.json", "package.json", "tsconfig.json"]
+config = { enable = true, lint = true, unstable = true }
+language-server = { command = "deno", args = ["lsp"], language-id = "typescript" }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "aiken"
+scope = "source.aiken"
+file-types = ["ak"]
+comment-token = "#"
+roots = ["aiken.toml"]
+config = { enable = true, lint = true, unstable = true }
+language-server = { command = "aiken", args = ["lsp"]}
+indent = { tab-width = 2, unit = "  " }
