@@ -5,14 +5,14 @@
 In writing a cardano validator in aiken, you define data types. 
 To use these validators, you need to construct valid cbor that can be parsed into these data types. 
 
-This repo attempts to systematically match aiken types with lucid code,
-and check really works by sumbitting txs to preprod. 
+This repo attempts to systematically match aiken types with constructors in lucid
+and check they really  work by sumbitting txs to preprod. 
 The correspondence between aiken and lucid, at least in lucid `<= 0.8.9`, is not one-to-one. 
 
 In later lucid versions, the `Data` api has changed. 
 
 To test, we have each type be the redeemer of a minting policy, 
-and to a simple match or operation in the minting policy to ensure its been parsed.
+and do a simple pattern match or operation in the minting policy to ensure it has been parsed.
 We then mint a token using the policy. 
 
 TODO: Bump lucid version. 
@@ -43,7 +43,7 @@ $tree -a -L 1
 
 This repo is equipped with a flake, and contains an `.envrc` to use `direnv`.
 
-Lucid data structures are at 
+Lucid data constructors are in
 ```
   ./off-chain/data.ts
 ```
@@ -52,7 +52,7 @@ Tests are in
   ./off-chain/test/
 ```
 
-Secrets expects to contain the following files. 
+The `./secrets/` directory expects the following files: 
 ```sample
 $tree secrets/
 secrets/
@@ -73,4 +73,3 @@ Run a test example
 ```
 deno test --allow-read --allow-net off-chain/test/basicEnum.ts
 ```
-
