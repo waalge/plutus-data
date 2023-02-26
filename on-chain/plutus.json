@@ -184,7 +184,7 @@
       "title": "basic.basic_dict",
       "redeemer": {
         "title": "Dict",
-        "description": "An opaque `Dict`. The type is opaque because the module maintains some\n invariant, namely: there's only one occurence of a given key in the dictionnary.\n\n Note that the `key` parameter is a phantom-type, and only present as a\n means of documentation. Keys are always `ByteArray`, but can be given\n meaningful names.\n\n See for example:\n\n ```aiken\n pub type Value =\n   Dict<PolicyId, Dict<AssetName, Int>>\n ```",
+        "description": "An opaque `Dict`. The type is opaque because the module maintains some\n invariant, namely: there's only one occurence of a given key in the dictionnary.\n\n Note that the `key` parameter is a phantom-type, and only present as a\n means of documentation. Keys can be any type, yet will need to comparable\n to use functions like `insert`.\n\n See for example:\n\n ```aiken\n pub type Value =\n   Dict<PolicyId, Dict<AssetName, Int>>\n ```",
         "dataType": "map",
         "keys": {
           "dataType": "bytes"
